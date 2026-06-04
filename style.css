@@ -1,0 +1,140 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #6a11cb,
+        #2575fc
+    );
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    color:white;
+    margin-bottom:20px;
+}
+
+.status{
+    color:white;
+    font-size:22px;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+#restartBtn{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:white;
+    color:#2575fc;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;   /* changed from margin-bottom */
+    transition:0.3s;
+}
+
+#restartBtn:hover{
+    transform:scale(1.05);
+}
+
+.board{
+    display:grid;
+    grid-template-columns:repeat(3,120px);
+    gap:10px;
+}
+
+.cell{
+    width:120px;
+    height:120px;
+    background:white;
+    border-radius:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:60px;
+    font-weight:bold;
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.cell:hover{
+    transform:scale(1.05);
+}
+
+.popup{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,0.7);
+}
+
+.popup-content{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    animation:pop 0.4s ease;
+}
+
+.popup-content h2{
+    margin-bottom:20px;
+    color:#333;
+}
+
+.popup-content button{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#2575fc;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.hidden{
+    display:none;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(0.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+@media(max-width:500px){
+
+    .board{
+        grid-template-columns:repeat(3,90px);
+    }
+
+    .cell{
+        width:90px;
+        height:90px;
+        font-size:45px;
+    }
+}
